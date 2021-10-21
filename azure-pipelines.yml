@@ -6,7 +6,7 @@ pool:
 
 variables:
   imageName: 'acrlnldevcentralus001.azurecr.io/camelyaml'
-  azureSubscriptionEndpoint: SLL Restricted
+  azureSubscriptionEndpoint: 'SLL Restricted'
   azureContainerRegistry: acrlnldevcentralus001.azurecr.io
   azureResourceGroup: neu-dallas-tech-night-rg
   kubernetesCluster: aks-dtn-dev-centralus-001
