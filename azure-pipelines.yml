@@ -10,7 +10,7 @@ variables:
   azureContainerRegistry: acrlnldevcentralus001.azurecr.io
   azureResourceGroup: neu-dallas-tech-night-rg
   kubernetesCluster: aks-dtn-dev-centralus-001
-  useClusterAdmin: true
+  useClusterAdmin: false
 
 steps:
 - task: Docker@2
