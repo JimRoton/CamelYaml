@@ -6,6 +6,11 @@ pool:
 
 variables:
   imageName: 'acrlnldevcentralus001.azurecr.io/camelyaml'
+  azureSubscriptionEndpoint: SLL Restricted
+  azureContainerRegistry: acrlnldevcentralus001.azurecr.io
+  azureResourceGroup: neu-dallas-tech-night-rg
+  kubernetesCluster: aks-dtn-dev-centralus-001
+  useClusterAdmin: true
 
 steps:
 - task: Docker@2
@@ -14,3 +19,13 @@ steps:
     repository: $(imageName)
     command: build
     Dockerfile: Dockerfile
+- task: Kubernetes@1
+  displayName: kubectl apply using arguments
+  inputs:
+    connectionType: Azure Resource Manager
+    azureSubscriptionEndpoint: $(azureSubscriptionEndpoint)
+    azureResourceGroup: $(azureResourceGroup)
+    kubernetesCluster: $(kubernetesCluster)
+    command: apply
+    arguments: -f deployment.yaml
+    
