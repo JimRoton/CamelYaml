@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: camelyaml
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: camelyaml
+  template:
+    metadata:
+      labels:
+        app: camelyaml
+    spec:
+      containers:
+      - name: camelyaml-container
+        image: acrlnldevcentralus001.azurecr.io/camelyaml:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: camelyaml-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: camelyaml
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
