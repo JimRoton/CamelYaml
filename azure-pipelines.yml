@@ -5,7 +5,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  imageName: 'acrlnldevcentralus001.azurecr.io/camelyaml:latest'
+  imageName: 'acrlnldevcentralus001.azurecr.io/camelyaml'
 
 steps:
 - task: Docker@2
