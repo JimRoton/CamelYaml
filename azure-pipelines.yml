@@ -26,4 +26,5 @@ steps:
     kubernetesCluster: $(kubernetesCluster)
     command: apply
     arguments: -f deployment.yaml
+    useClusterAdmin: true
     
