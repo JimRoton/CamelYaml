@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: camelyaml-container
-        image: acrlnldevcentralus001.azurecr.io/camelyaml:latest
+        image: acrdtndevcentralus001.azurecr.io/camelyaml:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
